@@ -1,5 +1,5 @@
 # Food RecSys
-Recommendation system for choosing dishes.
+Recommendation system for choosing foods.
 
 ## Requirements
 
