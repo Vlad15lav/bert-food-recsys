@@ -1,0 +1,9 @@
+# pip install -U -r requirements.txt
+torch
+torchvision
+numpy
+pandas
+matplotlib
+nltk
+pymystem3
+transformers
