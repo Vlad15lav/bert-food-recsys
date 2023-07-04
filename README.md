@@ -26,6 +26,16 @@ print(df.head())
 | Полный английский завтрак  | Разогреть духовку до 180 градусов, а сковороду...     | Куриное яйцо: 2 штуки, Свиные сосиски: 2 штуки...   | Калорий 907 ккал, Белки 26 грамм, Жиры 75 грам...   | Британская кухня   | 30 минут       | [ссылка](https://eda.ru/recepty/polnyy-angliyskiy-zavtrak-20740) | Завтрак  |
 | Французские гренки к завтраку | Смешать яйцо с молоком. Посолить. Обмакнуть ку...     | Батон: 3 куска, Молоко: 2 столовые ложки, Кури...   | Калорий 519 ккал, Белки 16 грамм, Жиры 29 грам...   | Французская кухня  | 10 минут       | [ссылка](https://eda.ru/recepty/zavtraki/francuzskie-grenki-k-zavtraku-32744) | Завтрак  |
 
+## Построение рекомендательной системы
+
+Для получения эмбеддингов блюд были использованы два подхода: BERT и TF-IDF.
+
+**BERT** (Bidirectional Encoder Representations from Transformers) - это [модель](https://huggingface.co/docs/transformers/model_doc/bert) глубокого обучения, способная генерировать контекстные эмбеддинги для текстовых данных. В данном кейсе использовалась предобученная scratch модель [`rubert-tini2`](https://huggingface.co/cointegrated/rubert-tiny2) в качестве базовой модели BERT. С помощью fine-tuning, [обучил модель](train_embeddings.ipynb) на наборе данных рецептов для получения эмбеддингов блюд. Демонстрация полученных эмбеддингов показаны в [ноутбуке](demo_bert_recommendation.ipynb).
+
+**TF-IDF** (Term Frequency-Inverse Document Frequency) - это [метод](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) для оценки важности слов в документе на основе их частоты в документе и коллекции документов. Я [использовал TF-IDF](demo_tfidf_recommendation.ipynb) для создания векторного представления блюд на основе их текстового описания. Это позволяет нам учитывать важность слов и их контекст в тексте рецептов при вычислении сходства между ними.
+
+Для измерения сходства между блюдами на основе их эмбеддингов, применяется косинусное сходство [(cosine similarity)](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html).
+
 
 
 ## Requirements
