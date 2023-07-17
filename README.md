@@ -58,7 +58,7 @@ load_ext tensorboard
 
 ## Requirements
 Установите или обновите все необходимые пакеты, указанные в файле requirements.txt, чтобы убедиться, что проект имеет все необходимые зависимости для правильной работы.
-```
+```bash
 pip install -U -r requirements.txt
 ```
 

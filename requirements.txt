@@ -1,9 +1,15 @@
 # pip install -U -r requirements.txt
+numpy
+scipy
+pandas
+pymystem3
+pyTelegramBotAPI
+pickle5
+scikit-learn
+matplotlib
+mysql-connector-python
+tqdm
 torch
 torchvision
-numpy
-pandas
-matplotlib
 nltk
-pymystem3
 transformers
