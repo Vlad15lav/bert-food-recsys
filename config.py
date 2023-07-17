@@ -1,10 +1,10 @@
 CONFIG = {
-    "TOKEN": "YOUR TELEGRAM BOT TOKEN",
+    "TOKEN": "6095674621:AAEnkMoLHsdSCif2zuiFUYp1VLWj408AibE",
     "DATABASE": {
-        "host": "YOUR_DB_HOST",
-        "user": "YOUR_DB_USER",
-        "passwd": "YOUR_DB_PASSWD",
-        "database": "YOUR_DB_NAME"
+        "host": "Vladicheck.mysql.pythonanywhere-services.com",
+        "user": "Vladicheck",
+        "passwd": "585239Vlad",
+        "database": "Vladicheck$ai_chef"
     },
     "DATA_ITEMS": "data/food-dataset-ru.csv",
     "BERT_ITEMS_PATH": "data/bert_items_embed.npy",
