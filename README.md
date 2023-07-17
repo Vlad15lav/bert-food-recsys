@@ -62,7 +62,7 @@ load_ext tensorboard
 pip install -U -r requirements.txt
 ```
 
-## Данные и параметры модели
+## Данные и параметры моделей
 Скачивание необходимых файлов для запуска моделей и рекомендации блюд
 ```bash
 gdown https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7
