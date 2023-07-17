@@ -1,10 +1,10 @@
 CONFIG = {
-    "TOKEN": "6095674621:AAEnkMoLHsdSCif2zuiFUYp1VLWj408AibE",
+    "TOKEN": "YOUR TOKEN",
     "DATABASE": {
-        "host": "Vladicheck.mysql.pythonanywhere-services.com",
-        "user": "Vladicheck",
-        "passwd": "585239Vlad",
-        "database": "Vladicheck$ai_chef"
+        "host": "YOUR HOST",
+        "user": "YOUR USER",
+        "passwd": "YOUR PASSWD",
+        "database": "YOUR DATABASE NAME"
     },
     "DATA_ITEMS": "data/food-dataset-ru.csv",
     "BERT_ITEMS_PATH": "data/bert_items_embed.npy",
