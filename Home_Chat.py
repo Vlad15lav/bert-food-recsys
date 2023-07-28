@@ -37,6 +37,7 @@ st.set_page_config(
 if not (os.path.exists(CONFIG["DATA_ITEMS"]) \
     and os.path.exists(CONFIG["TFIDF_ITEMS_PATH"]) \
     and os.path.exists(CONFIG["TFIDF_FEATURES"])):
+        os.system("apt-get install unzip gdown")
         os.system("gdown https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7")
         os.system("unzip -x recsys_data.zip")
 
