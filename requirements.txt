@@ -1,5 +1,6 @@
 # pip install -U -r requirements.txt
 numpy
+seaborn
 scipy
 scikit-learn
 streamlit
