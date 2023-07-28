@@ -1,11 +1,13 @@
 import os
 import re
 import nltk
+import gdown
 import pickle
 import pandas as pd
 import numpy as np
 import streamlit as st
 import scipy.sparse as sparse
+import zipfile
 
 from config import CONFIG
 
@@ -37,9 +39,11 @@ st.set_page_config(
 if not (os.path.exists(CONFIG["DATA_ITEMS"]) \
     and os.path.exists(CONFIG["TFIDF_ITEMS_PATH"]) \
     and os.path.exists(CONFIG["TFIDF_FEATURES"])):
-        os.system("apt-get install unzip gdown")
-        os.system("gdown https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7")
-        os.system("unzip -x recsys_data.zip")
+        gdown.download("https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7",
+            "recsys_data.zip", quiet=False)
+        
+        with zipfile.ZipFile("recsys_data.zip", 'r') as zip_ref:
+            zip_ref.extractall(".")
 
 
 @st.cache_data

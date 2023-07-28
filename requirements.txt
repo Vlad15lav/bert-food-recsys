@@ -9,6 +9,7 @@ pandas
 pymystem3
 pyTelegramBotAPI
 pickle5
+gdown
 matplotlib
 mysql-connector-python
 tqdm
