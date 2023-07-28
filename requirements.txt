@@ -1,15 +1,16 @@
 # pip install -U -r requirements.txt
 numpy
 scipy
+scikit-learn
+streamlit
 pandas
 pymystem3
 pyTelegramBotAPI
 pickle5
-scikit-learn
 matplotlib
 mysql-connector-python
 tqdm
 torch
 torchvision
-nltk
 transformers
+nltk
