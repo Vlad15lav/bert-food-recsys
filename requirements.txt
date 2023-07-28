@@ -3,6 +3,7 @@ numpy
 scipy
 scikit-learn
 streamlit
+streamlit_chat
 pandas
 pymystem3
 pyTelegramBotAPI
