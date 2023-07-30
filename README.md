@@ -105,7 +105,7 @@ wget -O weights/bert-food-cls.pth https://github.com/Vlad15lav/food-recsys/relea
 python bot.py
 ``` 
 
-### Web приложение Stremlit
+### Web приложение Streamlit
 
 <img src="./imgs/web-app-example.png" alt="Пример взаимодействия с Web приложением" width="768"/>
 
