@@ -10,7 +10,7 @@
 &nbsp; [5.1. Telegram бот](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#telegram-бот)    
 &nbsp; [5.2. Web приложение Streamlit](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#web-приложение-streamlit)    
 &nbsp; [5.3. Docker](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#docker) 
-[6. Онлайн A/B тестирование](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#онлайн-a/b-тестирование)
+[6. Онлайн A/B тестирование](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#онлайн-ab-тестирование)  
 
 ## Постановка задачи
 Цель проекта - разработать рекомендательную систему, которая предлагает пользователям рекомендацию рецептов блюд на основе их предпочтений.
