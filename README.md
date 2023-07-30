@@ -76,8 +76,22 @@ pip install -U -r requirements.txt
 
 ### Telegram бот
 
-### Данные и параметры моделей
-Скачайте необходимые файлы для запуска моделей и векторные представления рекомендации блюд.
+<img src="./imgs/telebot-example.png" alt="Пример взаимодействия с Telegram ботом" width="512"/>
+
+В файле `config.py` необходимо указать свои параметры базы данных и токен, полученный от [BotFather](https://t.me/BotFather).
+```python
+CONFIG = {
+    "TOKEN": "YOUR TOKEN",
+    "DATABASE": {
+        "host": "YOUR HOST",
+        "user": "YOUR USER",
+        "passwd": "YOUR PASSWD",
+        "database": "YOUR DATABASE NAME"
+    },
+    ...
+``` 
+
+Скачайте необходимые файлы для запуска моделей и векторные представления рекомендации контекста блюд.
 ```bash
 gdown https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7
 
@@ -86,8 +100,21 @@ unzip -x recsys_data.zip
 wget -O weights/bert-food-cls.pth https://github.com/Vlad15lav/food-recsys/releases/download/v0.1.0/bert-food-cls.pth
 ```
 
+Запустите Telegram бота с помощью скрипта `bot.py`.
+```bash
+python bot.py
+``` 
+
 ### Web приложение Stremlit
 
+<img src="./imgs/web-app-example.png" alt="Пример взаимодействия с Web приложением" width="768"/>
+
+Уже попробовать сервис можно на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
+
+Запустите Web приложение с помощью команды, указав название скрипта `Home_Chat.py`.
+```bash
+streamlit run Home_Chat.py
+``` 
 ### Docker
 
 ВНИМАНИЕ: описание этого README периодический обновляется
