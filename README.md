@@ -110,7 +110,7 @@ python bot.py
 
 <img src="./imgs/web-app-example.png" alt="Пример взаимодействия с Web приложением" width="768"/>
 
-Уже попробовать сервис можно на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
+Попробовать сервис можно на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
 
 Запустите Web приложение с помощью команды, указав название скрипта `Home_Chat.py`.
 ```bash
