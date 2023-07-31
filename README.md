@@ -115,7 +115,8 @@ python bot.py
 Запустите Web приложение с помощью команды, указав название скрипта `Home_Chat.py`.
 ```bash
 streamlit run Home_Chat.py
-``` 
+```
+
 ### Docker
 
 
