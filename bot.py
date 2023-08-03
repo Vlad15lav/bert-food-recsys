@@ -1,6 +1,8 @@
 import io
+import gdown
 import telebot
 import mysql.connector
+import wget
 
 from handlers.start_handler import start_handler
 from handlers.recommendation_handler import recommendation_handler
@@ -38,5 +40,18 @@ def main():
 
 if __name__ == "__main__":
     create_tables(db_mysql)
+
+    if not (os.path.exists(CONFIG["DATA_ITEMS"]) \
+        and os.path.exists(CONFIG["TFIDF_ITEMS_PATH"]) \
+        and os.path.exists(CONFIG["TFIDF_FEATURES"])):
+            gdown.download("https://drive.google.com/uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7",
+                "recsys_data.zip", quiet=False)
+            
+            with zipfile.ZipFile("recsys_data.zip", 'r') as zip_ref:
+                zip_ref.extractall(".")
+            
+            wget.download("https://github.com/Vlad15lav/food-recsys/releases/download/v0.1.0/bert-food-cls.pth",
+                out="weights/bert-food-cls.pth")
+
     main()
     
