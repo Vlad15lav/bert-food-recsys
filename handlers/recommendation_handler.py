@@ -24,8 +24,14 @@ def recommendation_handler(bot, message, db):
     model_id = get_model_id(db, message.from_user.id)
 
     # Выбираем модель рекомендации для пользователя
-    if model_id is None:
-        model_id = random.randint(1, 2)
+    if CONFIG["A/B_STATUS"]:
+        if model_id is None:
+            model_id = random.randint(1, 2)
+    else:
+        if CONFIG["MODEL_SELECT"] == "TF-IDF":
+            model_id = 1
+        else:
+            model_id = 2
 
     # Получаем рейтинг сходства рецептов
     if MODELS_NUM[model_id] == "TF-IDF":
