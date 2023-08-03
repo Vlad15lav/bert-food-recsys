@@ -1,10 +1,12 @@
+import os
+
 CONFIG = {
-    "TOKEN": "YOUR TOKEN",
+    "TOKEN": os.environ.get('TG_TOKEN'),
     "DATABASE": {
-        "host": "YOUR HOST",
-        "user": "YOUR USER",
-        "passwd": "YOUR PASSWD",
-        "database": "YOUR DATABASE NAME"
+        "host": os.environ.get('DB_HOST'),
+        "user": os.environ.get('DB_USER'),
+        "passwd": os.environ.get('DB_PASSWD'),
+        "database": os.environ.get('DB_NAME'),
     },
     
     "A/B_STATUS": False,
