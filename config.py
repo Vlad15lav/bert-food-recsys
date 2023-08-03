@@ -7,6 +7,7 @@ CONFIG = {
         "database": "YOUR DATABASE NAME"
     },
     
+    "A/B_STATUS": False,
     "DATA_ITEMS": "data/food-dataset-ru.csv",
     "BERT_ITEMS_PATH": "data/bert_items_embed.npy",
     "TFIDF_ITEMS_PATH": "data/tfidf_items_embed.npz",
