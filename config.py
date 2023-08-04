@@ -1,12 +1,12 @@
 import os
 
 CONFIG = {
-    "TOKEN": os.environ.get('TG_TOKEN'),
+    "TOKEN": os.environ.get('TELEGRAM_TOKEN'),
     "DATABASE": {
-        "host": os.environ.get('DB_HOST'),
-        "user": os.environ.get('DB_USER'),
-        "passwd": os.environ.get('DB_PASSWD'),
-        "database": os.environ.get('DB_NAME'),
+        "host": os.environ.get('DATABASE_HOST'),
+        "user": os.environ.get('DATABASE_USER'),
+        "passwd": os.environ.get('DATABASE_PASSWORD'),
+        "database": os.environ.get('DATABASE_NAME'),
     },
     
     "A/B_STATUS": False,
