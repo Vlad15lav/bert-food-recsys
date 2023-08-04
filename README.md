@@ -151,7 +151,7 @@ docker run --name my_bot \
     -e DATABASE_PASSWORD=<my-password> \
     -e DATABASE_NAME=aichef \
     -d \
-    mybot:latest
+    mybot:1.0.0
 ```
 
 ## Онлайн A/B тестирование
