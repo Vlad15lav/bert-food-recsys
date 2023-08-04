@@ -119,6 +119,40 @@ streamlit run Home_Chat.py
 
 ### Docker
 
+Создаем сеть для контейнеров:  
+```bash
+docker network create -d bridge my-net
+```
+Создаем volume для хранения данных СУБД:
+```bash
+docker volume create db_volume
+```
+Запускаем контейнер базу данных MySQL:  
+```bash
+docker run --name database \
+    --network my-net \
+    -v db_volume:/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=<my-secret-pw> \
+    -e MYSQL_USER=<my-user> \
+    -e MYSQL_PASSWORD=<my-password> \
+    -e MYSQL_DATABASE=aichef \
+    -d \
+    mysql:8.0.32 
+```
+Создаем образ и контейнер для Телеграм бота:
+```bash
+docker build -t mybot:1.0.0 .
+
+docker run --name my_bot \
+    --network my-net \
+    -e TELEGRAM_TOKEN=<my-tg-token> \
+    -e DATABASE_HOST=database \
+    -e DATABASE_USER=<my-user> \
+    -e DATABASE_PASSWORD=<my-password> \
+    -e DATABASE_NAME=aichef \
+    -d \
+    mybot:latest
+```
 
 ## Онлайн A/B тестирование
 
