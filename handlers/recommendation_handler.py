@@ -6,6 +6,7 @@ from utils.loader import load_files, load_data, load_model_tfidf, load_model_ber
 from models.recommendation_model import get_bert_recommendation, get_tfidf_recomendation
 
 from database.queries import get_model_id, get_user_id, add_request
+from config import CONFIG
 
 load_files()
 data_items, bert_embed_items, tfidf_embed_items = load_data()
