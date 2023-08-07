@@ -142,7 +142,8 @@ docker run --name database \
 Создаем образ и контейнер для Телеграм бота:
 ```bash
 docker build -t mybot:1.0.0 .
-
+```
+```bash
 docker run --name my_bot \
     --network my-net \
     -e TELEGRAM_TOKEN=<my-tg-token> \
