@@ -110,7 +110,7 @@ python bot.py
 
 <img src="./imgs/web-app-example.png" alt="Пример взаимодействия с Web приложением" width="768"/>
 
-Попробовать сервис можно на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
+Сервис доступен на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
 
 Запустите Web приложение с помощью команды, указав название скрипта `Home_Chat.py`.
 ```bash
@@ -118,15 +118,18 @@ streamlit run Home_Chat.py
 ```
 
 ### Docker
+Чтобы запустить приложение на Docker, вам потребуется выполнить следующие шаги:
 
 Создаем сеть для контейнеров:  
 ```bash
 docker network create -d bridge my-net
 ```
+
 Создаем volume для хранения данных СУБД:
 ```bash
 docker volume create db_volume
 ```
+
 Запускаем контейнер базу данных MySQL:  
 ```bash
 docker run --name database \
@@ -139,10 +142,12 @@ docker run --name database \
     -d \
     mysql:8.0.32 
 ```
+
 Создаем образ и контейнер для Телеграм бота:
 ```bash
 docker build -t mybot:1.0.0 .
 ```
+
 ```bash
 docker run --name my_bot \
     --network my-net \
