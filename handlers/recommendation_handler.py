@@ -2,11 +2,12 @@ import random
 
 from telebot import types
 
-from utils.loader import load_data, load_model_tfidf, load_model_bert
+from utils.loader import load_files, load_data, load_model_tfidf, load_model_bert
 from models.recommendation_model import get_bert_recommendation, get_tfidf_recomendation
 
 from database.queries import get_model_id, get_user_id, add_request
 
+load_files()
 data_items, bert_embed_items, tfidf_embed_items = load_data()
 
 tfidf_model = load_model_tfidf()
