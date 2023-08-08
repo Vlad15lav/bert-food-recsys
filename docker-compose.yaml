@@ -1,0 +1,33 @@
+version: '1.0.0'
+
+services:
+  database:
+    image: mysql:8.0.32
+    environment:
+      MYSQL_ROOT_PASSWORD: <YOUR_ROOT_PASSWORD> # Пароль для ROOT
+      MYSQL_USER: <YOUR_USER> # Имя пользователя БД
+      MYSQL_PASSWORD: <YOUR_PASSWORD> # Пароль пользователя БД
+      MYSQL_DATABASE: aichef
+    volumes:
+      - db_volume:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  telebot:
+    image: mybot:1.0.0
+    environment:
+      TELEGRAM_TOKEN: <YOUR_TG_TOKEN> # Ваш токен BotFather
+      DATABASE_HOST: database
+      DATABASE_USER: <YOUR_USER> # Имя пользователя БД
+      DATABASE_PASSWORD: <YOUR_PASSWORD> # Пароль пользователя БД
+      DATABASE_NAME: aichef
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  db_volume:
+    name: db_volume
