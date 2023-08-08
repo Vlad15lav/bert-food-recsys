@@ -36,5 +36,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print("Бот запущен!")
     create_tables(db_mysql)
     main()
