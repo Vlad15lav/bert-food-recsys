@@ -160,6 +160,35 @@ docker run --name my_bot \
     mybot:1.0.0
 ```
 
+### Docker Compose
+Запустить базу данных MySQL и основной контейнер Телеграм бота можно сразу с помощью docker-compose файла.  
+
+Перед запуском укажите `<переменные окружения>`:
+```yaml
+services:
+  database:
+    environment:
+      MYSQL_ROOT_PASSWORD: <YOUR_ROOT_PASSWORD> # Пароль для ROOT
+      MYSQL_USER: <YOUR_USER> # Имя пользователя БД
+      MYSQL_PASSWORD: <YOUR_PASSWORD> # Пароль пользователя БД
+      MYSQL_DATABASE: aichef
+
+  telebot:
+    environment:
+      TELEGRAM_TOKEN: <YOUR_TG_TOKEN> # Ваш токен BotFather
+      DATABASE_HOST: database
+      DATABASE_USER: <YOUR_USER> # Имя пользователя БД
+      DATABASE_PASSWORD: <YOUR_PASSWORD> # Пароль пользователя БД
+      DATABASE_NAME: aichef
+```
+Соберите образ для приложения и запустите проект.
+```bash
+docker build -t mybot:1.0.0 .
+```
+```bash
+docker-compose run -d
+```
+
 ## Онлайн A/B тестирование
 
 ВНИМАНИЕ: описание этого README периодический обновляется
