@@ -4,12 +4,12 @@
 ## Оглавление
 [1. Постановка задачи](https://github.com/Vlad15lav/food-recsys#постановка-задачи)  
 [2. Извлечения данных](https://github.com/Vlad15lav/food-recsys#извлечение-данных)  
-[3. Построение рекомендательной системы](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#построение-рекомендательной-системы)  
-[4. Офлайн оценка рекомендательных систем](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#офлайн-оценка-рекомендательных-систем)  
-[5. Развертывание модели](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#развертывание-модели)  
-&nbsp; [5.1. Telegram бот](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#telegram-бот)    
-&nbsp; [5.2. Web приложение Streamlit](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#web-приложение-streamlit)    
-&nbsp; [5.3. Docker](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#docker)   
+[3. Построение рекомендательной системы](https://github.com/Vlad15lav/food-recsys#построение-рекомендательной-системы)  
+[4. Офлайн оценка рекомендательных систем](https://github.com/Vlad15lav/food-recsys#офлайн-оценка-рекомендательных-систем)  
+[5. Развертывание модели](https://github.com/Vlad15lav/food-recsys#развертывание-модели)  
+&nbsp; [5.1. Telegram бот](https://github.com/Vlad15lav/food-recsys#telegram-бот)    
+&nbsp; [5.2. Web приложение Streamlit](https://github.com/Vlad15lav/food-recsys#web-приложение-streamlit)    
+&nbsp; [5.3. Docker](https://github.com/Vlad15lav/food-recsys#docker)   
 [6. Онлайн A/B тестирование](https://github.com/Vlad15lav/food-recsys#онлайн-ab-тестирование)  
 
 ## Постановка задачи
