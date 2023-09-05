@@ -2,15 +2,15 @@
 Этот кейс представляет собой рекомендательную систему рецептов блюд. В проекте использованы технологии веб-скрэпинга для сбора данных и fine-tuning модели трансформер BERT для получения эмбеддингов блюд. Кроме того, применяется метод TF-IDF в качестве второго способа подхода Content-based Filtering.
 
 ## Оглавление
-[1. Постановка задачи](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#постановка-задачи)  
-[2. Извлечения данных](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#извлечение-данных)  
+[1. Постановка задачи](https://github.com/Vlad15lav/food-recsys#постановка-задачи)  
+[2. Извлечения данных](https://github.com/Vlad15lav/food-recsys#извлечение-данных)  
 [3. Построение рекомендательной системы](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#построение-рекомендательной-системы)  
 [4. Офлайн оценка рекомендательных систем](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#офлайн-оценка-рекомендательных-систем)  
 [5. Развертывание модели](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#развертывание-модели)  
 &nbsp; [5.1. Telegram бот](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#telegram-бот)    
 &nbsp; [5.2. Web приложение Streamlit](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#web-приложение-streamlit)    
 &nbsp; [5.3. Docker](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#docker)   
-[6. Онлайн A/B тестирование](https://github.com/Vlad15lav/food-recsys/blob/main/README.md#онлайн-ab-тестирование)  
+[6. Онлайн A/B тестирование](https://github.com/Vlad15lav/food-recsys#онлайн-ab-тестирование)  
 
 ## Постановка задачи
 Цель проекта - разработать рекомендательную систему, которая предлагает пользователям рекомендацию рецептов блюд на основе их предпочтений.
