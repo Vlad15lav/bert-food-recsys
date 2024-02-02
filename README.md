@@ -22,7 +22,7 @@
 3. **Предложение рекомендаций**: Система предлагает пользователю список рекомендаций, включающий рецепты или блюда, которые наиболее соответствуют введенному тексту. Рекомендации могут быть ранжированы по степени сходства или другими факторами, учитывая предпочтения пользователя, доступные ингредиенты и другие факторы, в зависимости от реализации системы.
 
 ## Извлечение данных
-Для получения описания рецептов различных блюд с [сайта](https://www.eda.ru), использовалась технология [веб-скрэпинга](data-parser.ipynb). Это позволило автоматически извлечь информацию с веб-страниц, в данном случае, описания рецептов блюд. Итоговый созданный набор данных был загружен и доступен по [ссылке](https://www.kaggle.com/datasets/vlad15lav/recipes-corpus-textual-data-for-nlprecsys) на платформе Kaggle. 
+Для получения описания рецептов различных блюд с [сайта](https://www.eda.ru), использовалась технология [веб-скрэпинга](notebooks/data-parser.ipynb). Это позволило автоматически извлечь информацию с веб-страниц, в данном случае, описания рецептов блюд. Итоговый созданный набор данных был загружен и доступен по [ссылке](https://www.kaggle.com/datasets/vlad15lav/recipes-corpus-textual-data-for-nlprecsys) на платформе Kaggle. 
 ```python
 import pandas as pd
 
@@ -41,7 +41,7 @@ df.head()
 
 Для получения эмбеддингов блюд были использованы два подхода: BERT и TF-IDF.
 
-**BERT** (Bidirectional Encoder Representations from Transformers) - это [модель](https://huggingface.co/docs/transformers/model_doc/bert) глубокого обучения, способная генерировать контекстные эмбеддинги для текстовых данных. В данном кейсе использовалась предобученная scratch модель [`rubert-tini2`](https://huggingface.co/cointegrated/rubert-tiny2) в качестве базовой модели BERT. С помощью fine-tuning, [обучил модель](train_embeddings.ipynb) на наборе данных рецептов для получения эмбеддингов блюд. Демонстрация полученных эмбеддингов показаны в [ноутбуке](demo_bert_recsys.ipynb).
+**BERT** (Bidirectional Encoder Representations from Transformers) - это [модель](https://huggingface.co/docs/transformers/model_doc/bert) глубокого обучения, способная генерировать контекстные эмбеддинги для текстовых данных. В данном кейсе использовалась предобученная scratch модель [`rubert-tini2`](https://huggingface.co/cointegrated/rubert-tiny2) в качестве базовой модели BERT. С помощью fine-tuning, [обучил модель](notebooks/train_embeddings.ipynb) на наборе данных рецептов для получения эмбеддингов блюд. Демонстрация полученных эмбеддингов показаны в [ноутбуке](notebooks/demo_bert_recsys.ipynb).
 
 Посмотреть визуализацию обучения модели можно с помощью логов tensorboard. 
 ```properties
@@ -49,14 +49,14 @@ load_ext tensorboard
 %tensorboard --logdir tb_logs/bert-food
 ```
 
-**TF-IDF** (Term Frequency-Inverse Document Frequency) - это [метод](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) для оценки важности слов в документе на основе их частоты в документе и коллекции документов. Я [использовал TF-IDF](demo_tfidf_recsys.ipynb) для создания векторного представления блюд на основе их текстового описания. Это позволяет учитывать важность слов и их контекст в тексте рецептов при вычислении сходства между ними.
+**TF-IDF** (Term Frequency-Inverse Document Frequency) - это [метод](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) для оценки важности слов в документе на основе их частоты в документе и коллекции документов. Я [использовал TF-IDF](notebooks/demo_tfidf_recsys.ipynb) для создания векторного представления блюд на основе их текстового описания. Это позволяет учитывать важность слов и их контекст в тексте рецептов при вычислении сходства между ними.
 
 Для измерения сходства между блюдами на основе их эмбеддингов, применяется косинусное сходство [(cosine similarity)](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html).
 
 
 ## Офлайн оценка рекомендательных систем
 
-Для [оценка](eval_recsys.ipynb) эффективности рекомендательных систем на основе методов BERT и TF-IDF была использована метрика MAP@K (Mean Average Precision at K), которая учитывает точность рекомендаций на разных позициях в ранжированном списке. Для упрощения, релевантными рецептами считались те, которые принадлежали к одному классу.
+Для [оценка](notebooks/eval_recsys.ipynb) эффективности рекомендательных систем на основе методов BERT и TF-IDF была использована метрика MAP@K (Mean Average Precision at K), которая учитывает точность рекомендаций на разных позициях в ранжированном списке. Для упрощения, релевантными рецептами считались те, которые принадлежали к одному классу.
 
 | Метрика | BERT RecSys | TF-IDF RecSys |
 |---------|-------------|---------------|
@@ -110,7 +110,7 @@ python bot.py
 
 <img src="./imgs/web-app-example.png" alt="Пример взаимодействия с Web приложением" width="768"/>
 
-Сервис доступен на сайте [streamlit.app](https://food-recsys-chat.streamlit.app/).
+Сервис доступен на сайте [streamlit.app](https://food-recsys.streamlit.app/).
 
 Запустите Web приложение с помощью команды, указав название скрипта `Home_Chat.py`.
 ```bash
