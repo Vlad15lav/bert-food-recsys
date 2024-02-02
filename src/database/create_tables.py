@@ -1,5 +1,3 @@
-import mysql.connector
-
 def create_tables(db):
     """
     Создаем таблицы для базы данных

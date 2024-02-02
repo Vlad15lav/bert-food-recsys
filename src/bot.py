@@ -5,7 +5,7 @@ from handlers.start_handler import start_handler
 from handlers.recommendation_handler import recommendation_handler
 from handlers.feedback_handler import feedback_handler
 
-from database.create_tables import create_tables 
+from database.create_tables import create_tables
 
 from config import CONFIG
 
@@ -25,7 +25,7 @@ def handle_start(message):
 def handle_recomendation(message):
     if not db_mysql.is_connected():
         db_mysql.reconnect()
-    
+
     if not feedback_handler(bot, message, db_mysql):
         recommendation_handler(bot, message, db_mysql)
 

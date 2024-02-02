@@ -1,5 +1,5 @@
-import mysql.connector
 import hashlib
+
 
 def add_user(db, user_tm_id):
     """
@@ -52,17 +52,23 @@ def add_request(db, user_id, items_id, model_id):
     Добавляем запрос рекомендации в базу данных
     """
     with db.cursor() as cur:
-        cur.execute("""INSERT INTO requests (user_id, item_first_id,
-                                item_second_id, item_third_id, model_id, date)
-                        VALUES (%s, %s, %s, %s, %s, CONVERT_TZ(NOW(),'+00:00','+3:00'))""",
-                        (user_id, *items_id, model_id))
+        cur.execute("""INSERT INTO requests (user_id,
+                                            item_first_id,
+                                            item_second_id,
+                                            item_third_id,
+                                            model_id,
+                                            date) """
+                    """VALUES (%s, %s, %s, %s, %s, """
+                    """CONVERT_TZ(NOW(),'+00:00','+3:00'))""",
+                    (user_id, *items_id, model_id))
 
     db.commit()
 
 
 def get_model_id(db, user_tm_id):
     """
-    Узнать текущею рекомендательную систему у пользователя (для A/B тестирования)
+    Узнать текущею рекомендательную систему
+    у пользователя (для A/B тестирования)
     """
     tm_hash_id = hashlib.sha3_256(str(user_tm_id).encode()).hexdigest()
 
@@ -71,8 +77,10 @@ def get_model_id(db, user_tm_id):
                         FROM requests AS r
                         JOIN users AS u USING(user_id)
                         WHERE u.tm_hash_id = %s
-                            AND DATE(r.date) = (SELECT DATE(CONVERT_TZ(NOW(),'+00:00','+3:00')))""",
-                            (tm_hash_id, ))
+                            AND DATE(r.date) = (
+                                SELECT DATE(CONVERT_TZ(NOW(),"""
+                    """'+00:00','+3:00')))""",
+                    (tm_hash_id, ))
         model_id = cur.fetchall()
 
     if len(model_id) == 0:

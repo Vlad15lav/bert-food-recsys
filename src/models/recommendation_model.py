@@ -13,6 +13,7 @@ nltk.download("stopwords")
 stopwords_ru = stopwords.words("russian")
 mystem = Mystem()
 
+
 def get_bert_recommendation(text, tokenizer, model, embed_items):
     """
     Вычисления схожих продуктов для рекомендации с помощью BERT
@@ -28,7 +29,7 @@ def get_bert_recommendation(text, tokenizer, model, embed_items):
     # Получаем схожесть рецептов и сортируем по значению
     rating = cosine_similarity(embed_items, out).reshape(-1)
     rating_arg = np.argsort(rating)[::-1]
-    
+
     return rating_arg
 
 
@@ -44,14 +45,15 @@ def get_tfidf_recomendation(text, model, embed_items):
 
     # Удаляем стоп-слова и нормализуем
     tokens = mystem.lemmatize(text)
-    text = " ".join([token for token in tokens\
-                    if not token in stopwords_ru and token != " " and len(token) > 1])
-    
+    text = " ".join([token for token in tokens
+                     if token not in stopwords_ru
+                     and token != " " and len(token) > 1])
+
     # Векторное представление TF-IDF модели
     out = model.transform([text])
 
     # Получаем схожесть рецептов и сортируем по значению
     rating = cosine_similarity(embed_items, out).reshape(-1)
     rating_arg = np.argsort(rating)[::-1]
-    
+
     return rating_arg

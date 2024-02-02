@@ -8,9 +8,10 @@ CONFIG = {
         "passwd": os.environ.get('DATABASE_PASSWORD'),
         "database": os.environ.get('DATABASE_NAME'),
     },
-    
+
     "A/B_STATUS": False,
-    "MODEL_SELECT": "TF-IDF", # Options: "TF-IDF", "BERT"
+    # Options: "TF-IDF", "BERT"
+    "MODEL_SELECT": "TF-IDF",
     "DATA_ITEMS": "data/food-dataset-ru.csv",
     "BERT_ITEMS_PATH": "data/bert_items_embed.npy",
     "TFIDF_ITEMS_PATH": "data/tfidf_items_embed.npz",
@@ -18,9 +19,7 @@ CONFIG = {
     "TOKENIZER_PATH": "cointegrated/rubert-tiny2",
     "BERT_WEIGHT": "weights/bert-food-cls.pth",
     "BERT_CONFIG": {
-        "architectures": [
-        "BertForPreTraining"
-        ],
+        "architectures": ["BertForPreTraining"],
         "attention_probs_dropout_prob": 0.1,
         "emb_size": 312,
         "gradient_checkpointing": False,
