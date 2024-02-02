@@ -19,7 +19,7 @@ def load_files():
             os.path.exists(CONFIG["TFIDF_ITEMS_PATH"]) and
             os.path.exists(CONFIG["TFIDF_FEATURES"])):
 
-        gdown.download("https://drive.google.com/" /
+        gdown.download("https://drive.google.com/" +
                        "uc?id=17nDmHE84dT76vsVrq-5RaqrEoJBdFMV7",
                        "recsys_data.zip", quiet=False)
 
@@ -27,7 +27,7 @@ def load_files():
             zip_ref.extractall(".")
 
         os.remove("recsys_data.zip")
-        wget.download("https://github.com/Vlad15lav/food-recsys" /
+        wget.download("https://github.com/Vlad15lav/food-recsys" +
                       "/releases/download/v0.1.0/bert-food-cls.pth",
                       out="weights/bert-food-cls.pth")
 
